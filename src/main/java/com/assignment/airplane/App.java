@@ -37,7 +37,7 @@ public class App
     	int passengerCounter = fillPassengersinAppropriateSeats(seatingArrangementArr,maxRow,noOfPax);
     	//System.out.println(Arrays.deepToString(seatingArrangementArr));
     	print(seatingArrangementArr,maxRow);
-    	return passengerCounter;
+    	return passengerCounter-1;
     	
     }
     
@@ -144,7 +144,7 @@ public class App
     	for(int row=0;row<maxRow;row++) {
     		for(int i=0;i<seatingArrangementArr.length;i++) {
     			for(int col=0;col<seatingArrangementArr[i][0].length;col++) {
-    				if(row < seatingArrangementArr[i].length && seatingArrangementArr[i][row][col].equals(seatType) && passengerCounter <= 36) {
+    				if(row < seatingArrangementArr[i].length && seatingArrangementArr[i][row][col].equals(seatType) && passengerCounter <= noOfPax) {
     					seatingArrangementArr[i][row][col]=seatType+passengerCounter++;
     				}
         			
