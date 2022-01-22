@@ -2,17 +2,18 @@ package com.assignment.airplane;
 
 import java.util.Arrays;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static void main( String[] args )
     {
-    	String s="[[3,3], [4,3], [2,3], [3,4]]";
+    	System.out.println();
+    	System.out.println("         W- Window , M-Middle , A-Aisle           ");
+    	System.out.println();
+    	
+    	String inputStr="[[3,3], [4,3], [2,3], [3,4]]";
 
-    	runApp(s,30);
+    	runApp(inputStr,30);
     	
     	
     }
