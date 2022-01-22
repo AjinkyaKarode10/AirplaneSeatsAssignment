@@ -46,17 +46,17 @@ public class App
     	
     	String[] rows = input.split("], \\[");
     	for (int i = 0; i < rows.length; i++) {
-    	    // Remove any beginning and ending braces and any white spaces
+    	    // Remove any beginning and ending braces and any white spaces from input str
     	    rows[i] = rows[i].replace("[[", "").replace("]]", "").replaceAll(" ", "");
     	}
 
     	// Get the number of columns in a row
     	int numberOfColumns = rows[0].split(",").length;
 
-    	// Setup your matrix
+    	// Setup matrix
     	String[][] matrix = new String[rows.length][numberOfColumns];
 
-    	// Populate your matrix
+    	// Populate matrix
     	for (int i = 0; i < rows.length; i++) {
     	    matrix[i] = rows[i].split(",");
     	}
@@ -84,7 +84,7 @@ public class App
     }
     
     static void fillSeatsWith_M_A_W(String[][][] seatingArrangementArr) {
-    	//1
+    	//1 Fill Seats with Middle first
     	for(int i=0;i<seatingArrangementArr.length;i++) {
     		for(int k=0;k<seatingArrangementArr[i].length;k++) {
     			for(int j=1;j<seatingArrangementArr[i][0].length-1;j++) {
@@ -95,7 +95,7 @@ public class App
     		
     	}
     	
-    	//2
+    	//2 Fill seats with Aisle
     	for(int i=0;i<seatingArrangementArr.length;i++) {
     		for(int k=0;k<seatingArrangementArr[i].length;k++) {
     			for(int j=0;j<seatingArrangementArr[i][0].length;j++) {
@@ -109,7 +109,7 @@ public class App
     		
     	}
     	
-    	//3
+    	//3 Fill seats with WIndows
     	for(int i=0;i<seatingArrangementArr.length;i++) {
     		if(i == 0 || i == seatingArrangementArr.length-1) {
     			for(int r = 0 ;r<seatingArrangementArr[i].length;r++) {
@@ -159,7 +159,7 @@ public class App
     
     static void print(String[][][] seatingArrangementArr , int maxRow) {
     	StringBuilder builder = new StringBuilder();
-    	//builder.append("[ ");
+    	
     	for(int row=0;row<maxRow;row++) {
     		
     		for(int i=0;i<seatingArrangementArr.length;i++) {
@@ -185,11 +185,9 @@ public class App
         		}
     			
     			builder.append(" |  ");
-    			
-    			
+
     		}
     		
-    		//System.out.println();
     		builder.append("\n");
 
     	}
